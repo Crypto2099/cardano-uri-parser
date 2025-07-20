@@ -1,0 +1,44 @@
+{
+  "name": "cardano-uri-parser",
+  "version": "1.0.0",
+  "description": "A modular, type-safe Cardano URI parser supporting CIP-13, claim, stake, browse, and future authorities.",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto2099/cardano-uri-parser.git"
+  },
+  "keywords": [
+    "cardano",
+    "uri",
+    "parser",
+    "CIP-13",
+    "CIP-99",
+    "cip",
+    "blockchain",
+    "wallet",
+    "typescript"
+  ],
+  "author": "Adam Dean <adam@crypto2099.io>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}

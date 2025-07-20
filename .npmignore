@@ -1,0 +1,8 @@
+tests
+src
+*.test.ts
+jest.config.js
+tsup.config.ts
+.github
+.vscode
+tsconfig.json
