@@ -1,6 +1,6 @@
 {
   "name": "cardano-uri-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A modular, type-safe Cardano URI parser supporting CIP-13, claim, stake, browse, and future authorities.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
