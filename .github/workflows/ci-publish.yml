@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  publish:
+  ci:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,7 +17,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
 
       - run: npm ci
@@ -40,6 +40,7 @@ jobs:
           fi
 
       - name: Publish package
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
