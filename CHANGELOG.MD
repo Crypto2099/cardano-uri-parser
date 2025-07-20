@@ -6,7 +6,7 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## \[Unreleased]
+## [Unreleased]
 
 ### Added
 
@@ -22,16 +22,15 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## \[1.0.3] - 2025-07-20
+## [1.0.4] - 2025-07-20
 
 ### Added
 
 * Initial public release of `cardano-uri-parser`.
 * Modular handlers for:
 
-    * CIP-13 (payment URIs)
+    * CIP-13 (payment + stake URIs)
     * CIP-99 (claim URIs)
-    * stake authority URIs
     * browse authority URIs with full URL reconstruction.
 * Byron and Shelley address detection with mainnet/testnet inference.
 * High-coverage test suite (\~98%).
