@@ -1,0 +1,43 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Check version bump
+        run: |
+          CURRENT_VERSION=$(npm view cardano-uri-parser version)
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "Current npm version: $CURRENT_VERSION"
+          echo "Local package.json version: $LOCAL_VERSION"
+          if [ "$CURRENT_VERSION" == "$LOCAL_VERSION" ]; then
+            echo "❌ Local version matches published version. Please bump package.json version before merging to main."
+            exit 1
+          else
+            echo "✅ Version bump detected, continuing to publish."
+          fi
+
+      - name: Publish package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a bug or unexpected behavior in cardano-uri-parser
+title: "[Bug] "
+labels: [bug]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug report
+        Please fill out the details below to help us diagnose and fix the issue.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe what you were trying to do and what went wrong.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+
+  - type: input
+    id: uri-example
+    attributes:
+      label: Example URI (if applicable)
+      description: Provide an example Cardano URI that caused the issue.
+      placeholder: web+cardano://...
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide steps so we can reproduce the issue.
+      placeholder: |
+        1. Call parse()
+        2. Observe error
+        3. Check logs...
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Library version
+      description: What version of cardano-uri-parser are you using?
+      placeholder: e.g., 1.0.1
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional info
+      description: Any other context, logs, or details you'd like to share.
+      placeholder: e.g., Node.js version, environment, related issues
