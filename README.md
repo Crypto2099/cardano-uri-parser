@@ -8,6 +8,15 @@ A modular, type-safe Cardano URI parser supporting:
 
 ---
 
+## 📊 Build & Status
+
+[![Changelog Check](https://github.com/crypto2099/cardano-uri-parser/actions/workflows/check-changelog.yml/badge.svg)](https://github.com/crypto2099/cardano-uri-parser/actions/workflows/check-changelog.yml)
+[![CI & Publish](https://github.com/crypto2099/cardano-uri-parser/actions/workflows/ci-publish.yml/badge.svg)](https://github.com/crypto2099/cardano-uri-parser/actions/workflows/ci-publish.yml)
+[![npm version](https://img.shields.io/npm/v/cardano-uri-parser.svg)](https://www.npmjs.com/package/cardano-uri-parser)
+[![License](https://img.shields.io/github/license/crypto2099/cardano-uri-parser.svg)](./LICENSE)
+
+--- 
+
 ## 📦 Installation
 
 ```

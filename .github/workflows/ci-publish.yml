@@ -1,4 +1,4 @@
-name: Publish to npm
+name: CI + Publish to npm
 
 on:
   push:
@@ -17,12 +17,14 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org/'
 
       - run: npm ci
 
       - run: npm run build
+
+      - run: npm run test -- --coverage
 
       - name: Check version bump
         run: |
