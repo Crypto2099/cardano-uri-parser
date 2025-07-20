@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest a new feature or enhancement for cardano-uri-parser
+title: "[Feature] "
+labels: [enhancement]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+        Please describe your idea or feature suggestion below.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: What feature or enhancement would you like?
+      description: Describe the new functionality or improvement you are proposing.
+      placeholder: I would like the parser to support...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What problem does this solve or what use case does it support?
+      description: Explain why this feature is important or how it would be used.
+      placeholder: This would help dApp developers by...
+    validations:
+      required: true
+
+  - type: input
+    id: cip-link
+    attributes:
+      label: Related CIP or CIP Pull Request (if applicable)
+      description: Provide a link to the relevant Cardano Improvement Proposal (CIP) or CIP PR that this feature relates to.
+      placeholder: https://github.com/cardano-foundation/CIPs/pull/xxx
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context or resources
+      description: Include any extra links, references, or context to help us understand the request.
+      placeholder: e.g., Example project, technical details, mockups, etc.
