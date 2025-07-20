@@ -2,10 +2,9 @@
 
 A modular, type-safe Cardano URI parser supporting:
 
-✅ [CIP-13](https://cips.cardano.org/cips/cip13/) (payment URIs)
+✅ [CIP-13](https://cips.cardano.org/cips/cip13/) (`payment` + `stake` URIs)
 ✅ [CIP-99](https://cips.cardano.org/cips/cip99/) (`claim` URIs)
-✅ `stake` authority URIs
-✅ `browse` authority URIs (deep-linking to dApps with full URL reconstruction)
+✅ [PR-1058](https://github.com/cardano-foundation/CIPs/pull/1058) (`browse` URIs)
 
 ---
 
