@@ -36,6 +36,10 @@ describe('Transaction URI', () => {
         expect(result.metadata?.label).toBe('1694');
     });
 
+    test('throws if transaction hash is empty', () => {
+        expect(() => parse('web+cardano://transaction')).toThrow(CardanoUriError);
+    })
+
     test('throws if transaction hash is invalid', () => {
         const uri = 'web+cardano://transaction/notavalidhash';
         expect(() => parse(uri)).toThrow(CardanoUriError);
