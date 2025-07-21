@@ -46,8 +46,8 @@ npm install cardano-uri-parser
 
 ## ✨ Features
 
-* Modular handlers per authority (`payment`, `claim`, `stake`, `browse`,
-  `block`, `transaction`, `address`)
+* Modular handlers per authority (`claim`, `stake`, `browse`,
+  `block`, `transaction`, `address`, `pay`)
 * Type-safe TypeScript definitions
 * **Network + era inference:** Byron (`DdzFF`, `Ae2`), Shelley (`addr1`,
   `stake1`), Testnet (`addr_test1`)
@@ -67,7 +67,9 @@ npm install cardano-uri-parser
 * 🏷 **CIP-134**: Address URIs (including Byron, Shelley, testnet, and stake
   references)  
   [https://cips.cardano.org/cips/cip134/](https://cips.cardano.org/cips/cip134/)
-* 🌐 **Proposed #1058**: Browse authority deep-links (upcoming CIP)
+* 💳 **Proposed #843**: Enhanced Cardano Payment URIs  
+  [https://github.com/cardano-foundation/CIPs/pull/843](https://github.com/cardano-foundation/CIPs/pull/843)
+* 🌐 **Proposed #1058**: Browse authority deep-links
   [https://github.com/cardano-foundation/CIPs/pull/1058](https://github.com/cardano-foundation/CIPs/pull/1058)
 
 ---
@@ -165,7 +167,8 @@ Apache 2.0 © 2025 Adam Dean ([crypto2099](https://github.com/crypto2099))
 * [CIP-99] — Claim token URIs
 * [CIP-107] — Block and transaction URIs
 * [CIP-134] — Address URIs
-* [CIP-PR843] — (Upcoming) Enhanced payments
+* [CIP-PR843] — Enhanced payment URIs
+* [CIP-PR1058] - Browse Application URIs
 
 [CIP-13]:https://cips.cardano.org/cips/cip13/
 
