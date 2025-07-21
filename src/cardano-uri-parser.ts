@@ -1,9 +1,11 @@
-import { handleClaimUri } from './handlers/claim';
-import { handleStakeUri } from './handlers/stake';
-import { handleBrowseUri } from './handlers/browse';
-import { handleDefaultUri } from './handlers/default';
-import { CardanoUri } from './types';
-import { CardanoUriError } from './errors';
+import {handleClaimUri} from "./handlers/claim";
+import {handleStakeUri} from "./handlers/stake";
+import {handleBrowseUri} from "./handlers/browse";
+import {handleDefaultUri} from "./handlers/default";
+import {CardanoUri} from "./types";
+import {CardanoUriError} from "./errors";
+import {handleBlockUri} from "./handlers/block";
+import {handleTransactionUri} from "./handlers/transaction";
 
 export function parse(uri: string): CardanoUri {
     let url: URL;
@@ -11,25 +13,29 @@ export function parse(uri: string): CardanoUri {
     try {
         url = new URL(uri);
     } catch {
-        throw new CardanoUriError('InvalidUri', 'Invalid URI format');
+        throw new CardanoUriError("InvalidUri", "Invalid URI format");
     }
 
-    if (url.protocol !== 'web+cardano:') {
-        throw new CardanoUriError('InvalidScheme', 'Unsupported scheme: ' + url.protocol);
+    if (url.protocol !== "web+cardano:") {
+        throw new CardanoUriError("InvalidScheme", "Unsupported scheme: " + url.protocol);
     }
 
     const authority = url.hostname;
-    const pathParts = url.pathname.split('/').filter(Boolean);
+    const pathParts = url.pathname.split("/").filter(Boolean);
     const queryParams = url.searchParams;
 
     try {
         switch (authority) {
-            case 'claim':
-                return handleClaimUri(pathParts, queryParams);
-            case 'stake':
-                return handleStakeUri(pathParts, queryParams);
-            case 'browse':
+            case "block":
+                return handleBlockUri(queryParams);
+            case "browse":
                 return handleBrowseUri(pathParts, queryParams);
+            case "claim":
+                return handleClaimUri(pathParts, queryParams);
+            case "stake":
+                return handleStakeUri(pathParts, queryParams);
+            case "transaction":
+                return handleTransactionUri(pathParts, url.hash ? url.hash.slice(1) : null);
             default:
                 return handleDefaultUri(authority, queryParams);
         }
@@ -37,7 +43,7 @@ export function parse(uri: string): CardanoUri {
         if (err instanceof CardanoUriError) {
             throw err;
         }
-        throw new CardanoUriError('HandlerError', 'Error in handler', { originalError: err });
+        throw new CardanoUriError("HandlerError", "Error in handler", {originalError: err});
     }
 }
 
