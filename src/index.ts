@@ -1,9 +1,11 @@
-export {parse, safeParse} from './cardano-uri-parser';
-export {CardanoUriError} from './errors';
+export {parse, safeParse} from "./cardano-uri-parser";
+export {CardanoUriError} from "./errors";
 export type {
+    BlockUri,
+    BrowseUri,
     CardanoUri,
     ClaimUri,
     StakeUri,
-    BrowseUri,
-    DefaultUri
-} from './types';
+    TransactionUri,
+    DefaultUri,
+} from "./types";

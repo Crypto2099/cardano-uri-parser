@@ -19,6 +19,21 @@ export interface BrowseUri {
     url: string;
 }
 
+export type BlockUri = {
+    type: 'block',
+    block_hash?: string,
+    block_height?: number
+}
+
+export type TransactionUri = {
+    type: 'transaction',
+    tx_hash: string | 'self',
+    output_index?: number,
+    metadata?: {
+        label?: string
+    }
+}
+
 export interface DefaultUri {
     type: 'payment';
     address: string;
@@ -28,8 +43,12 @@ export interface DefaultUri {
 }
 
 
+
+
 export type CardanoUri =
+    | BrowseUri
+    | BlockUri
     | ClaimUri
     | StakeUri
-    | BrowseUri
+    | TransactionUri
     | DefaultUri;
