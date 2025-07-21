@@ -34,10 +34,11 @@ export type TransactionUri = {
     }
 }
 
-export type AddressUri = {
-    type: "address",
-    address: string,
-    stake_reference?: string
+export interface AddressUri {
+    type: 'address';
+    address: string;
+    address_type?: string;
+    is_testnet?: boolean;
 }
 
 export interface DefaultUri {
