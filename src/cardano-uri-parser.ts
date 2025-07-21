@@ -1,11 +1,12 @@
+import {handleAddressUri} from "./handlers/address";
+import {handleBlockUri} from "./handlers/block";
+import {handleBrowseUri} from "./handlers/browse";
 import {handleClaimUri} from "./handlers/claim";
 import {handleStakeUri} from "./handlers/stake";
-import {handleBrowseUri} from "./handlers/browse";
+import {handleTransactionUri} from "./handlers/transaction";
 import {handleDefaultUri} from "./handlers/default";
 import {CardanoUri} from "./types";
 import {CardanoUriError} from "./errors";
-import {handleBlockUri} from "./handlers/block";
-import {handleTransactionUri} from "./handlers/transaction";
 
 export function parse(uri: string): CardanoUri {
     let url: URL;
@@ -26,6 +27,8 @@ export function parse(uri: string): CardanoUri {
 
     try {
         switch (authority) {
+            case "address":
+                return handleAddressUri(pathParts, queryParams);
             case "block":
                 return handleBlockUri(pathParts, queryParams);
             case "browse":

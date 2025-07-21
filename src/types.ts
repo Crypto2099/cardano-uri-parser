@@ -1,17 +1,17 @@
 export interface ClaimUri {
-    type: 'claim';
+    type: "claim";
     version: number;
     faucet_url: string;
     code?: string | null;
 }
 
 export interface StakeUri {
-    type: 'stake';
+    type: "stake";
     pools: { [pool_id: string]: number };
 }
 
 export interface BrowseUri {
-    type: 'browse';
+    type: "browse";
     scheme: string;
     namespaced_domain: string;
     app_path: string;
@@ -20,32 +20,36 @@ export interface BrowseUri {
 }
 
 export type BlockUri = {
-    type: 'block',
+    type: "block",
     block_hash?: string,
     block_height?: number
 }
 
 export type TransactionUri = {
-    type: 'transaction',
-    tx_hash: string | 'self',
+    type: "transaction",
+    tx_hash: string | "self",
     output_index?: number,
     metadata?: {
         label?: string
     }
 }
 
-export interface DefaultUri {
-    type: 'payment';
-    address: string;
-    amount?: number;
-    era: 'byron' | 'shelley';
-    network: 'mainnet' | 'testnet';
+export type AddressUri = {
+    type: "address",
+    address: string,
+    stake_reference?: string
 }
 
-
-
+export interface DefaultUri {
+    type: "payment";
+    address: string;
+    amount?: number;
+    era: "byron" | "shelley";
+    network: "mainnet" | "testnet";
+}
 
 export type CardanoUri =
+    | AddressUri
     | BrowseUri
     | BlockUri
     | ClaimUri
