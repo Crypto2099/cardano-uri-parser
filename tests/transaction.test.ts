@@ -45,4 +45,29 @@ describe('Transaction URI', () => {
         const uri = `web+cardano://transaction/${validTxHash}#abc`;
         expect(() => parse(uri)).toThrow(CardanoUriError);
     });
+
+    test('throws if transaction hash is too short', () => {
+        const uri = 'web+cardano://transaction/abc123';
+        expect(() => parse(uri)).toThrow(CardanoUriError);
+    });
+
+    test('throws if metadata label is invalid (non-numeric)', () => {
+        const uri = `web+cardano://transaction/7704a68404facf7126fa356f1b09f0e4c552aeef454cd0daba4208f3a64372e9/metadata/abc`;
+        expect(() => parse(uri)).toThrow(CardanoUriError);
+    });
+
+    test('throws if output index fragment is negative', () => {
+        const uri = `web+cardano://transaction/7704a68404facf7126fa356f1b09f0e4c552aeef454cd0daba4208f3a64372e9#-1`;
+        expect(() => parse(uri)).toThrow(CardanoUriError);
+    });
+
+    test('throws if output index fragment is not an integer', () => {
+        const uri = `web+cardano://transaction/7704a68404facf7126fa356f1b09f0e4c552aeef454cd0daba4208f3a64372e9#1.5`;
+        expect(() => parse(uri)).toThrow(CardanoUriError);
+    });
+
+    test('throws if tx hash is "self" but has invalid metadata path', () => {
+        const uri = 'web+cardano://transaction/self/metadata/!';
+        expect(() => parse(uri)).toThrow(CardanoUriError);
+    });
 });
