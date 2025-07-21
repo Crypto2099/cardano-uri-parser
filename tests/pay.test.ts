@@ -40,12 +40,12 @@ describe("Pay URI handler", () => {
 
     test("throws on invalid address", () => {
         const uri = `web+cardano://pay/${bad_address}`;
-        expect(parse(uri)).toThrow(CardanoUriError);
+        expect(() => parse(uri)).toThrow(CardanoUriError);
     })
 
     test("throws on invalid token quantity", () => {
         const uri = `web+cardano://pay/${addr}?t=asset1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq|-1`;
-        expect(parse(uri)).toThrow(CardanoUriError);
+        expect(() => parse(uri)).toThrow(CardanoUriError);
     });
 
     test("throws on negative lovelace", () => {
