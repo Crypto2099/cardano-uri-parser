@@ -7,7 +7,7 @@ export function handleStakeUri(_rest: string[], queryParams: URLSearchParams): S
         if (pools[key] !== undefined) {
             throw new CardanoUriError('HandlerError', `Duplicate pool key: ${key}`);
         }
-        pools[key] = Number(value) || 0;
+        pools[key] = Number(value) || 1;
     });
     return {
         type: 'stake',

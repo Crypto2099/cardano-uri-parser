@@ -22,6 +22,24 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.1.0] - 2025-07-21
+
+### Added
+
+* New modular handlers for:
+  * Supporting CIP-107 `transaction` and `block` authorities
+  * Supporting CIP-134 `addr` authority
+  * Supporting CIP PR843 `pay` authority
+
+## Changed
+
+* Changed `default` handler to use newer address validation
+
+### Fixed
+
+* Cleaned up some existing tests to provide more edge and corner-case support
+* Addressed all outstanding code coverage issues and raised code coverage to 99%
+
 ## [1.0.4] - 2025-07-20
 
 ### Added

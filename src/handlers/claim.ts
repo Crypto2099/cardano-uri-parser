@@ -2,7 +2,7 @@ import { ClaimUri } from '../types';
 import { CardanoUriError } from '../errors';
 
 export function handleClaimUri(rest: string[], queryParams: URLSearchParams): ClaimUri {
-    const versionStr = rest[0]?.replace('v', '');
+    const versionStr = rest[0].replace('v', '');
     const version = Number(versionStr);
 
     if (!versionStr || isNaN(version)) {
