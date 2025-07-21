@@ -95,8 +95,6 @@ if (safeResult) {
 npm install
 npm run build
 npm run test
-npm run test:watch
-npm run test:coverage
 ```
 
 ---
@@ -104,7 +102,7 @@ npm run test:coverage
 ## 📜 License
 
 Apache 2.0
-© 2024 Adam Dean ([crypto2099](https://github.com/crypto2099))
+© 2025 Adam Dean ([crypto2099](https://github.com/crypto2099))
 
 ---
 
