@@ -2,7 +2,7 @@ import {AddressUri} from "../types";
 import {CardanoUriError} from "../errors";
 import {classifyCardanoAddress} from "../utils/validators";
 
-export function handleAddrUri(rest: string[], queryParams: URLSearchParams): AddressUri {
+export function handleAddrUri(rest: string[]): AddressUri {
     const address = rest[0];
     if (!address) {
         throw new CardanoUriError("MissingRequiredField", "Missing address");

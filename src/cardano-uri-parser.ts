@@ -28,7 +28,7 @@ export function parse(uri: string): CardanoUri {
     try {
         switch (authority) {
             case "addr":
-                return handleAddrUri(pathParts, queryParams);
+                return handleAddrUri(pathParts);
             case "block":
                 return handleBlockUri(pathParts, queryParams);
             case "browse":
