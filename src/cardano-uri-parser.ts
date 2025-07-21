@@ -2,6 +2,7 @@ import {handleAddrUri} from "./handlers/addr";
 import {handleBlockUri} from "./handlers/block";
 import {handleBrowseUri} from "./handlers/browse";
 import {handleClaimUri} from "./handlers/claim";
+import {handlePayUri} from "./handlers/pay";
 import {handleStakeUri} from "./handlers/stake";
 import {handleTransactionUri} from "./handlers/transaction";
 import {handleDefaultUri} from "./handlers/default";
@@ -35,6 +36,8 @@ export function parse(uri: string): CardanoUri {
                 return handleBrowseUri(pathParts, queryParams);
             case "claim":
                 return handleClaimUri(pathParts, queryParams);
+            case "pay":
+                return handlePayUri(pathParts, queryParams);
             case "stake":
                 return handleStakeUri(pathParts, queryParams);
             case "transaction":

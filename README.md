@@ -6,6 +6,7 @@ A modular, type-safe Cardano URI parser supporting:
 ✅ [CIP-99] (`claim` URIs)
 ✅ [CIP-107] (`transaction` + `block` URIs)
 ✅ [CIP-134] (`address` URIs)
+✅ [CIP-PR843] (`pay` URIs)
 ✅ [CIP-PR1058] (`browse` URIs)
 
 ---
@@ -30,6 +31,7 @@ The **`cardano-uri-parser`** library currently supports:
 | [CIP-107] (`block`)       | Block URIs by hash or height                                                                   |
 | [CIP-107] (`transaction`) | Transaction URIs by hash, with optional output index or metadata references                    |
 | [CIP-134] (`address`)     | Shelley, Byron (Daedalus, Icarus), mainnet/testnet address URIs with optional stake references |
+| [CIP-PR843] (`pay`)       | Enhanced payment URIs with lovelace, payment ID, note, and native token support                |
 | [CIP-PR1058] (`browse`)   | Deep-linking to external dApps (with full URL reconstruction)                                  |
 
 ---

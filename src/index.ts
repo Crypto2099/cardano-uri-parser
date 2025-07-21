@@ -6,6 +6,7 @@ export type {
     BrowseUri,
     CardanoUri,
     ClaimUri,
+    PayUri,
     StakeUri,
     TransactionUri,
     DefaultUri,

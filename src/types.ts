@@ -41,6 +41,15 @@ export interface AddressUri {
     is_testnet?: boolean;
 }
 
+export interface PayUri {
+    type: 'pay';
+    address: string;
+    lovelace?: number;
+    paymentId?: string;
+    note?: string;
+    tokens?: { assetId: string; quantity: number }[];
+}
+
 export interface DefaultUri {
     type: "payment";
     address: string;
@@ -54,6 +63,7 @@ export type CardanoUri =
     | BrowseUri
     | BlockUri
     | ClaimUri
+    | PayUri
     | StakeUri
     | TransactionUri
     | DefaultUri;
