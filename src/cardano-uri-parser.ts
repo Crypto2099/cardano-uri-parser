@@ -1,4 +1,4 @@
-import {handleAddressUri} from "./handlers/address";
+import {handleAddrUri} from "./handlers/addr";
 import {handleBlockUri} from "./handlers/block";
 import {handleBrowseUri} from "./handlers/browse";
 import {handleClaimUri} from "./handlers/claim";
@@ -27,8 +27,8 @@ export function parse(uri: string): CardanoUri {
 
     try {
         switch (authority) {
-            case "address":
-                return handleAddressUri(pathParts, queryParams);
+            case "addr":
+                return handleAddrUri(pathParts);
             case "block":
                 return handleBlockUri(pathParts, queryParams);
             case "browse":
